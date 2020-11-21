@@ -142,14 +142,45 @@ img {
 ,.chat-footer {
   min-height: 50px;
   background-color: grey;
+  display: flex;
+}
+
+/* DEBUG */
+.chat-header div {
+  background-color: lightgreen;
+  border: solid 1px black;
+  width: 100%;
+  height: 50px;
+
+}
+
+.chat-header .profile-picture > img {
+  width: 30%;
 }
 
 /* current chat body */
 
 .chat-body {
   min-height: calc(100% - 100px);
-  background-color: yellow;
+  /* background-color: yellow; */
+  background-image: url("../img/mine.jpg");
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+
 
 }
 
+.
+
 /* current chat footer */
+
+/* DEBUG */
+
+.chat-footer > div {
+  background-color: lightgreen;
+  border: solid 1px black;
+  width: 100%;
+  height: 50px;
+
+}
