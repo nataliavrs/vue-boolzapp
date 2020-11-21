@@ -4,14 +4,20 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 16px;
+
+  font-family: 'Roboto', sans-serif;
+
+
+
 }
 
 /* .8em */
 
 /* DEBUG */
 
-img {
-  max-width: 50%;
+.chats-container img {
+  max-width: 50px;
   border-radius: 50px;
 }
 
@@ -54,34 +60,85 @@ img {
 
 /* side header */
 .side-header {
-  min-height: 50px;
+  min-height: 60px;
   min-width: 330px;
-  background-color: pink;
-  border: solid 1px black;
+  background-color: #D5DBD6;
+  /* border: solid 1px black; */
   display: flex;
+  /* padding: 10px; */
+  font-weight: bold;
+
 
 }
 
-/* DEBUG */
-.side-header div {
-  background-color: red;
-  border: solid 1px black;
-  width: 100%;
+.side-header .profile-picture {
+  align-self: center;
+
+}
+
+.side-header .profile-picture img {
+  width: 50px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.side-header .user-name {
+  align-self: center;
+  width: calc(100% - 180px);
+}
+
+.side-header .features-icons {
+  align-self: center;
+  color: #B1B1B1;
+}
+
+.side-header .features-icons i {
+  margin-left: 10px;
+  font-size: 1.3em;
 }
 
 /* notifications block */
 .notifications {
   min-height: 50px;
-  background-color: pink;
-  border: solid 1px black;
+  background-color: #76DCFF;
   display: flex;
+  padding: 10px;
 }
 
-/* DEBUG */
-.notifications div {
-  background-color: red;
-  border: solid 1px black;
-  width: 100%;
+.bell {
+  padding: 10px;
+  border-radius: 50px;
+  background-color: white;
+  width: 13%;
+  position: relative;
+  align-self: center;
+
+}
+
+.bell > i {
+  border-radius: 50px;
+  color: #76DCFF;
+  font-size: 1.3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bell-message {
+  align-self: center;
+
+}
+
+.bell-message span {
+  display: block;
+  font-size: .9em;
+}
+
+.bell-message span:last-child {
+  color: grey;
+  text-decoration: underline;
+
 }
 
 
