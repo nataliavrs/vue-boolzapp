@@ -162,16 +162,42 @@ img {
 
 .chat-body {
   min-height: calc(100% - 100px);
-  /* background-color: yellow; */
   background-image: url("../img/mine.jpg");
   background-size: contain;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+}
 
+.message-block-user {
+  display: flex;
+  flex-direction: row-reverse;
 
 }
 
-.
+.message-block-contact {
+  display: flex;
+}
+
+.user-message, .contact-message {
+  background-color: white;
+  padding: 10px;
+}
+
+.user-message {
+  background-color: #CBFBB3;
+  min-width: 50%;
+  max-width: 50%;
+  margin: 30px;
+}
+
+.contact-message {
+  background-color: white;
+  min-width: 50%;
+  max-width: 50%;
+  margin: 30px;
+}
+
 
 /* current chat footer */
 
