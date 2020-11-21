@@ -1,0 +1,114 @@
+/* GENERAL */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* .8em */
+
+/* BACKGROUND */
+
+.main-bg .header-bg {
+  height: 100px;
+  background-color: #229A88;
+}
+
+.main-bg .body-bg {
+  height: calc(100vh - 100px);
+  background-color: #D5DBD6;
+}
+
+/* WHOLE APP */
+
+.app-container {
+  background-color: salmon;
+  height: 95vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  display: flex;
+}
+
+/* SIDE BAR CHATS  */
+
+.side-container {
+  background-color: green;
+  min-width: 330px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+
+}
+
+/* side header */
+.side-header {
+  min-height: 50px;
+  min-width: 330px;
+  background-color: pink;
+  border: solid 1px black;
+}
+
+/* notifications block */
+.notifications {
+  min-height: 50px;
+  background-color: pink;
+  border: solid 1px black;
+}
+
+/* search block */
+.search {
+  min-height: 30px;
+  background-color: pink;
+  border: solid 1px black;
+}
+
+
+/* all chats */
+.chats-container {
+  height: calc(100vh - 80px);
+  background-color: red;
+  border: solid 1px black;
+}
+
+/* each chat */
+
+.single-chat {
+  height: 70px;
+  background-color: salmon;
+  border: solid 1px black;
+
+}
+
+/* OPEN CHAT */
+
+.openchat-container {
+  background-color: blue;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content:  */
+
+
+}
+
+/* current chat header */
+.chat-header
+,.chat-footer {
+  min-height: 50px;
+
+  background-color: grey;
+}
+
+/* current chat body */
+
+.chat-body {
+  min-height: calc(100% - 100px);
+  background-color: yellow;
+
+}
+
+/* current chat footer */
