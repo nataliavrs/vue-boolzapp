@@ -33,7 +33,7 @@ a {
 /* WHOLE APP */
 
 .app-container {
-  background-color: salmon;
+
   height: 95vh;
   position: absolute;
   top: 50%;
@@ -46,7 +46,7 @@ a {
 /* SIDE BAR CHATS  */
 
 .side-container {
-  background-color: green;
+
   min-width: 330px;
   min-height: 100%;
   display: flex;
@@ -222,45 +222,64 @@ a {
 /* OPEN CHAT */
 
 .openchat-container {
-  background-color: blue;
   min-width: 600px;
   display: flex;
   flex-direction: column;
-  /* justify-content:  */
-
 
 }
 
 /* current chat header */
 .chat-header
 ,.chat-footer {
-  min-height: 50px;
-  background-color: grey;
+  min-height: 60px;
+  background-color: #F4EEE9;
   display: flex;
+  padding: 5px;
+  align-items: center;
 }
 
-/* DEBUG */
-.chat-header div {
-  background-color: lightgreen;
-  border: solid 1px black;
-  width: 100%;
-  height: 50px;
+.chat-header i {
+  color: #BCBCBC;
+  font-size: 1.3em;
+  margin: 5px 10px 5px 5px;
 
 }
 
 .chat-header .profile-picture > img {
-  width: 30%;
+  width: 50px;
+  border-radius: 50px;
 }
+
+.chat-header .person-name {
+  color: grey;
+  width: 75%;
+}
+
+.chat-header .person-name span:first-child {
+  display: block;
+  color: black;
+
+}
+
+.chat-header .person-name span:nth-child(2) {
+  font-size: .8em;
+}
+
+.chat-header .person-name span:nth-child(3) {
+  font-size: .8em;
+}
+
 
 /* current chat body */
 
 .chat-body {
-  min-height: calc(100% - 100px);
+  min-height: calc(100% - 140px);
   background-image: url("../img/mine.jpg");
-  background-size: contain;
+  background-size: auto;
   display: flex;
   flex-direction: column;
   overflow: scroll;
+
 }
 
 .message-block-user {
@@ -276,31 +295,53 @@ a {
 .user-message, .contact-message {
   background-color: white;
   padding: 10px;
+  border-radius: 10px;
+}
+
+.user-message span:last-child, .contact-message span:last-child {
+  display: block;
+  font-size: .7em;
+  color: #B5B9BB;
+  text-align: right;
+
+
 }
 
 .user-message {
   background-color: #CBFBB3;
+}
+
+.contact-message, .user-message {
   min-width: 50%;
   max-width: 50%;
   margin: 30px;
 }
 
-.contact-message {
-  background-color: white;
-  min-width: 50%;
-  max-width: 50%;
-  margin: 30px;
-}
+/* chat footer */
 
-
-/* current chat footer */
-
-/* DEBUG */
-
-.chat-footer > div {
-  background-color: lightgreen;
-  border: solid 1px black;
-  width: 100%;
+.chat-footer {
   height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
+.chat-footer  input {
+  width: 80%;
+  height: 80%;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.chat-footer ::placeholder {
+  color: grey;
+  font-weight: lighter;
+  padding: 5px;
+  font-size: .8em;
+}
+
+.chat-footer i {
+  color: #6C7678;
+  font-size: 1.4em;
 }
