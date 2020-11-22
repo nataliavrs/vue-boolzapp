@@ -59,18 +59,10 @@ a {
 .side-header {
   min-height: 60px;
   min-width: 330px;
-  background-color: #D5DBD6;
-  /* border: solid 1px black; */
+  background-color: #EAEAEA;
   display: flex;
-  /* padding: 10px; */
   font-weight: bold;
-
-
-}
-
-.side-header .profile-picture {
-  align-self: center;
-
+  align-items: center;
 }
 
 .side-header .profile-picture img {
@@ -80,13 +72,12 @@ a {
 }
 
 .side-header .user-name {
-  align-self: center;
-  width: calc(100% - 180px);
+  width: calc(100% - 155px);
 }
 
 .side-header .features-icons {
-  align-self: center;
   color: #B1B1B1;
+  font-size: .9em;
 }
 
 .side-header .features-icons i {
@@ -103,28 +94,22 @@ a {
 }
 
 .bell {
-  padding: 10px;
+  height: 41px;
+  width: 41px;
   border-radius: 50px;
-  background-color: white;
-  width: 13%;
+  background-color: #F0FCFF;
   position: relative;
   align-self: center;
-
 }
 
 .bell > i {
   border-radius: 50px;
   color: #76DCFF;
-  font-size: 1.3em;
+  font-size: 1.1em;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.bell-message {
-  align-self: center;
-
 }
 
 .bell-message span {
@@ -132,10 +117,24 @@ a {
   font-size: .9em;
 }
 
+.bell-message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+
+}
+
 .bell-message span:last-child {
-  color: grey;
+  color: #447587;
+  font-size: .8em;
   text-decoration: underline;
 
+
+}
+
+a:visited {
+  color: #447587;
 }
 
 
