@@ -13,6 +13,7 @@ a {
   font-size: 1em;
 }
 
+
 /* BACKGROUND */
 
 .header-bg {
@@ -179,12 +180,15 @@ a:visited {
 
 .single-chat {
   height: 70px;
-  background-color: white;
   display: flex;
   padding: 4px;
 }
 
 .single-chat:hover {
+  background-color: #E9EBEB;
+}
+
+.opened {
   background-color: #E9EBEB;
 }
 

@@ -76,7 +76,7 @@
         <!-- all chats -->
         <div class="chats-container">
           <!-- single chat -->
-          <div v-for="(items, index) in contacts" class="single-chat" @click="openChat(index)">
+          <div v-for="(items, index) in contacts"  class="single-chat" @click="openChat(index)" :class="( index == indexChat ? 'opened' : '')">
 
             <div class="contact-picture">
               <img v-bind:src="allChats[index].contactPicture">

@@ -1,6 +1,7 @@
 var app = new Vue({
   el: "#app",
   data: {
+    openClass: "",
     indexChat: 0,
     allChats: contacts = [
        {
@@ -38,6 +39,7 @@ var app = new Vue({
    methods: {
      openChat: function(index) {
        this.indexChat = index;
+       this.openClass = "opened";
      },
 
   }
