@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 
 }
 
@@ -14,8 +14,6 @@ a {
   font-size: 1em;
   color: black;
 }
-
-/* .8em */
 
 
 /* BACKGROUND */
@@ -46,8 +44,7 @@ a {
 /* SIDE BAR CHATS  */
 
 .side-container {
-
-  min-width: 330px;
+  min-width: 370px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -144,6 +141,7 @@ a:visited {
   background-color: #FAFAFA;
   display: flex;
   align-items: center;
+
 }
 
 .search-bothcontainer {
@@ -151,8 +149,10 @@ a:visited {
   display: flex;
   align-items: center;
   border: solid 1px lightgrey;
-  border-radius: 3px;
-
+  border-radius: 4px;
+  padding: 8px;
+  width: 90%;
+  margin: auto;
 }
 
 .search-icon  {
@@ -161,13 +161,14 @@ a:visited {
 
 .search-input input {
   border: none;
-  width: 400px;
-
+  width: 260px;
+  overflow: hidden;
+  margin: 0 5px;
 }
 
 .search-input ::placeholder {
   color: lightgrey;
-
+  font-size: .9em;
 }
 
 /* all chats */
@@ -181,7 +182,7 @@ a:visited {
   height: 70px;
   background-color: white;
   display: flex;
-  padding: 7px;
+  padding: 4px;
 }
 
 .single-chat:hover {
@@ -189,9 +190,10 @@ a:visited {
 }
 
 .contact-chat {
-  width: 40%;
+  width: 50%;
+  overflow: hidden;
+  height: 50px;
 }
-
 
 .single-chat .contact-chat span {
   display: block;
@@ -200,6 +202,10 @@ a:visited {
 
 .single-chat .contact-chat span:last-child {
   color: #D1D4D5;
+  font-size: .8em;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+
 }
 
 .single-chat .contact-hour span {
@@ -221,10 +227,9 @@ a:visited {
 /* OPEN CHAT */
 
 .openchat-container {
-  min-width: 600px;
+  min-width: 650px;
   display: flex;
   flex-direction: column;
-
 }
 
 /* current chat header */
@@ -240,7 +245,7 @@ a:visited {
 .chat-header i {
   color: #BCBCBC;
   font-size: 1.3em;
-  margin: 5px 10px 5px 5px;
+  margin: 5px;
 
 }
 
@@ -268,8 +273,11 @@ a:visited {
   font-size: .8em;
 }
 
-
 /* current chat body */
+
+.openchat-container {
+  background-color: white;
+}
 
 .chat-body {
   min-height: calc(100% - 140px);
@@ -285,10 +293,12 @@ a:visited {
   display: flex;
   flex-direction: row-reverse;
 
+
 }
 
 .message-block-contact {
   display: flex;
+
 }
 
 .user-message, .contact-message {
