@@ -7,23 +7,20 @@
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-
 }
 
 a {
   font-size: 1em;
-  color: black;
 }
-
 
 /* BACKGROUND */
 
-.main-bg .header-bg {
+.header-bg {
   height: 100px;
   background-color: #229A88;
 }
 
-.main-bg .body-bg {
+.body-bg {
   height: calc(100vh - 100px);
   background-color: #D5DBD6;
 }
@@ -31,7 +28,6 @@ a {
 /* WHOLE APP */
 
 .app-container {
-
   height: 95vh;
   position: absolute;
   top: 50%;
@@ -63,7 +59,7 @@ a {
 }
 
 .side-header .profile-picture img {
-  width: 50px;
+  width: 60px;
   border-radius: 50px;
   padding: 5px;
 }

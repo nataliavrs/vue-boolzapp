@@ -5,10 +5,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>BoolzApp</title>
   </head>
@@ -23,7 +22,7 @@
     </div>
 
     <!-- WHOLE APP -->
-    <div class="app-container">
+    <div id="app" class="app-container">
 
       <!-- SIDE BAR CHATS -->
       <div class="side-container">
@@ -77,10 +76,10 @@
         <!-- all chats -->
         <div class="chats-container">
           <!-- single chat -->
-          <div class="single-chat">
+          <div class="single-chat" @click="openChat">
 
             <div class="contact-picture">
-              <img src="img/avatar_1.jpg" alt="Contac profile picture">
+              <img src="img/avatar_1.jpg" alt="Contact profile picture">
             </div>
 
             <div class="contact-chat">
@@ -91,9 +90,6 @@
             <div class="contact-hour">
               <span>20 11 2020</span>
               <span>10:52:03</span>
-            </div>
-
-            <div class="clearfix">
             </div>
 
           </div>
@@ -236,11 +232,11 @@
         <div class="chat-header">
 
           <div class="profile-picture">
-            <img src="img/avatar_1.jpg" alt="User profile picture">
+            <img v-bind:src="allChats[0].contactPicture" alt="User profile picture">
           </div>
 
           <div class="person-name">
-            <span>Luisa</span>
+            <span>{{allChats[0].name}}</span>
             <span>Ultimo accesso oggi</span>
             <span>20 11 2020 12:01:32</span>
           </div>
@@ -259,7 +255,7 @@
           <div class="message-block-user">
 
             <div class="user-message">
-              <span>Lo sai che ha aperto una nuova pizzeria? Lo sai che ha aperto una nuova pizzeria?Lo sai che ha aperto una nuova pizzeria?Lo sai che ha aperto una nuova pizzeria?</span>
+              <span>{{allChats[0].userMessage}}</span>
               <span>20 11 2020 12:01:32</span>
             </div>
 
@@ -268,7 +264,7 @@
           <div class="message-block-contact">
 
             <div class="contact-message">
-              <span>Sì, ma preferirei andare al cinema</span>
+              <span>{{allChats[0].contactMessage}}</span>
               <span>20 11 2020 12:01:32</span>
             </div>
 
@@ -277,69 +273,14 @@
           <div class="message-block-user">
 
             <div class="user-message">
-              <span>sxcsd</span>
+              <span>{{allChats[0].contactMessage}}</span>
               <span>20 11 2020 12:01:32</span>
 
             </div>
 
           </div>
 
-          <div class="message-block-user">
 
-            <div class="user-message">
-              <span>Ciao bei maschioni</span>
-              <span>20 11 2020 12:01:32</span>
-
-            </div>
-
-          </div>
-
-          <div class="message-block-contact">
-
-            <div class="contact-message">
-              <span>ok</span>
-              <span>20 11 2020 12:01:32</span>
-
-            </div>
-
-          </div>
-
-          <div class="message-block-user">
-
-            <div class="user-message">
-              <span>Lo sai che ha aperto una nuova pizzeria?</span>
-              <span>20 11 2020 12:01:32</span>
-            </div>
-
-          </div>
-
-          <div class="message-block-contact">
-
-            <div class="contact-message">
-              <span>Sì, ma preferirei andare al cinema</span>
-              <span>20 11 2020 12:01:32</span>
-            </div>
-
-          </div>
-
-          <div class="message-block-user">
-
-            <div class="user-message">
-              <span>Lo sai che ha aperto una nuova pizzeria?</span>
-              <span>20 11 2020 12:01:32</span>
-            </div>
-
-          </div>
-
-          <div class="message-block-contact">
-
-            <div class="contact-message">
-              <span>Sì, ma preferirei andare al cinema</span>
-              <span>20 11 2020 12:01:32</span>
-
-            </div>
-
-          </div>
 
 
         </div>
@@ -365,7 +306,10 @@
       </div>
 
     </div>
-    <!-- open chat end -->
+
+    <script type="text/javascript" src="js/script.js">
+
+    </script>
 
   </body>
 </html>
