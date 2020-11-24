@@ -1,6 +1,7 @@
 var app = new Vue({
   el: "#app",
   data: {
+    inputMessage: "",
     openClass: "",
     indexChat: 0,
     contactsList: [
@@ -113,9 +114,26 @@ var app = new Vue({
   },
    methods: {
      openChat: function(index) {
+
        this.indexChat = index;
        this.openClass = "opened";
+
      },
+     sendMessage: function(index) {
+
+      this.contactsList[index].allMessages = [
+
+        ...allMessages,
+        {
+          message: this.inputMessage,
+          origin: "sent",
+          hour: "20:20"
+        }
+      ]
+
+       console.log(this.inputMessage);
+
+     }
 
   }
 })
