@@ -12,17 +12,17 @@ var app = new Vue({
         {
           message: "Hello",
           origin: "sent",
-          hour: "12:19"
+          hour: "1111"
         },
         {
           message: "Hey",
           origin: "received",
-          hour: "14:04"
+          hour: "1111"
         },
         {
           message: "How are you?",
           origin: "sent",
-          hour: "18:10"
+          hour: "1111"
         }
       ]
     },
@@ -33,17 +33,17 @@ var app = new Vue({
        {
          message: "Ciao!",
          origin: "sent",
-         hour: "12:19"
+         hour: "2222"
        },
        {
          message: "Ehi...",
          origin: "received",
-         hour: "14:04"
+         hour: "2222"
        },
        {
          message: "Come stai?",
          origin: "sent",
-         hour: "18:10"
+         hour: "2222"
        }
      ]
     },
@@ -54,17 +54,17 @@ var app = new Vue({
       {
         message: "ciao",
         origin: "sent",
-        hour: "12:19"
+        hour: "3333"
       },
       {
         message: "sto bene",
         origin: "received",
-        hour: "14:04"
+        hour: "3333"
       },
       {
         message: "interessante",
         origin: "sent",
-        hour: "18:10"
+        hour: "3333"
       }
     ]
     },
@@ -75,17 +75,17 @@ var app = new Vue({
        {
          message: "ciao",
          origin: "sent",
-         hour: "12:19"
+         hour: "4444"
        },
        {
          message: "sto bene",
          origin: "received",
-         hour: "14:04"
+         hour: "4444"
        },
        {
          message: "interessante",
          origin: "sent",
-         hour: "18:10"
+         hour: "4444"
        }
      ]
     },
@@ -119,20 +119,23 @@ var app = new Vue({
        this.openClass = "opened";
 
      },
-     sendMessage: function(index) {
+     sendMessage: function() {
 
-      this.contactsList[index].allMessages = [
-
-        // ...allMessages,
+      this.contactsList[this.indexChat].allMessages.push(
         {
           message: this.inputMessage,
           origin: "sent",
-          hour: "20:20"
+          hour: "0000"
+
         }
-      ]
 
-       console.log(this.inputMessage);
+      );
 
+      setTimeout(() => this.contactsList[this.indexChat].allMessages.push ({
+        message: 'ok...',
+        origin: 'received',
+        hour: '0000'
+      }), 1000);
      }
 
   }
