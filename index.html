@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -82,27 +83,18 @@
               <img v-bind:src="contactsList[index].contactPicture">
             </div>
 
-            <div class="contact-chat">
-
+            <div class="contact-name">
               <span>{{contactsList[index].name}}</span>
-              <span></span>
-
             </div>
 
-            <div class="contact-chat">
-
-              <span v-for="(item, index) in contactsList[index].allMessages">
-                {{item.message}}
+            <div class="contact-message">
+              <span v-for="(item, index) in contactsList[index].allMessages">{{item.message}}
               </span>
-
             </div>
 
             <div class="contact-hour">
-
-              <span v-for="item in contactsList[indexChat].allMessages">
-                {{item.hour}}
+              <span v-for="item in contactsList[indexChat].allMessages">{{item.hour}}
               </span>
-
             </div>
 
           </div>
