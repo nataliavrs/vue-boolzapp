@@ -123,7 +123,7 @@ var app = new Vue({
 
       this.contactsList[index].allMessages = [
 
-        ...allMessages,
+        // ...allMessages,
         {
           message: this.inputMessage,
           origin: "sent",
