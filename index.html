@@ -76,20 +76,33 @@
         <!-- all chats -->
         <div class="chats-container">
           <!-- single chat -->
-          <div v-for="(items, index) in contacts"  class="single-chat" @click="openChat(index)" :class="( index == indexChat ? 'opened' : '')">
+          <div v-for="(item, index) in contactsList" class="single-chat" @click="openChat(index)" :class="(index == indexChat ? 'opened' : '')">
 
             <div class="contact-picture">
-              <img v-bind:src="allChats[index].contactPicture">
+              <img v-bind:src="contactsList[index].contactPicture">
             </div>
 
             <div class="contact-chat">
-              <span>{{allChats[index].name}}</span>
-              <span>{{allChats[index].contactMessage}}</span>
+
+              <span>{{contactsList[index].name}}</span>
+              <span></span>
+
+            </div>
+
+            <div class="contact-chat">
+
+              <span v-for="(item, index) in contactsList[index].allMessages">
+                {{item.message}}
+              </span>
+
             </div>
 
             <div class="contact-hour">
-              <span>20 11 2020</span>
-              <span>10:52:03</span>
+
+              <span v-for="item in contactsList[indexChat].allMessages">
+                {{item.hour}}
+              </span>
+
             </div>
 
           </div>
@@ -97,7 +110,6 @@
         </div>
 
       </div>
-      <!-- end side bar -->
 
       <!-- OPEN CHAT -->
       <div class="openchat-container">
@@ -106,11 +118,11 @@
         <div class="chat-header">
 
           <div class="profile-picture">
-            <img v-bind:src="allChats[indexChat].contactPicture" alt="User profile picture">
+            <img v-bind:src="contactsList[indexChat].contactPicture" alt="Contact profile picture">
           </div>
 
           <div class="person-name">
-            <span>{{allChats[indexChat].name}}</span>
+            <span>{{contactsList[indexChat].name}}</span>
             <span>Ultimo accesso oggi</span>
             <span>20 11 2020 12:01:32</span>
           </div>
@@ -126,34 +138,12 @@
         <!-- current chat body -->
         <div class="chat-body">
 
-          <div class="message-block-user">
+          <span v-for="item in contactsList[indexChat].allMessages" v-bind:class="(item.origin)">
 
-            <div class="user-message">
-              <span>{{allChats[indexChat].userMessage}}</span>
-              <span>20 11 2020 12:01:32</span>
-            </div>
+            <span>{{item.message}}</span>
+            <span>{{item.hour}}</span>
 
-          </div>
-
-          <div class="message-block-contact">
-
-            <div class="contact-message">
-              <span>{{allChats[indexChat].contactMessage}}</span>
-              <span>20 11 2020 12:01:32</span>
-            </div>
-
-          </div>
-
-          <div class="message-block-user">
-
-            <div class="user-message">
-              <span>{{allChats[indexChat].contactMessage}}</span>
-              <span>20 11 2020 12:01:32</span>
-
-            </div>
-
-          </div>
-
+          </span>
 
         </div>
 
@@ -164,9 +154,7 @@
             <i class="far fa-smile"></i>
           </div>
 
-          <!-- <div class=""> -->
-            <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-          <!-- </div> -->
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
 
           <div class="audio">
             <i class="fas fa-microphone"></i>
@@ -179,9 +167,6 @@
 
     </div>
 
-    <script type="text/javascript" src="js/script.js">
-
-    </script>
-
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

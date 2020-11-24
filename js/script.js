@@ -3,37 +3,112 @@ var app = new Vue({
   data: {
     openClass: "",
     indexChat: 0,
-    allChats: contacts = [
-       {
-        name: 'Michele',
-        contactMessage: 'Coucou',
-        userMessage: 'On se voit quand?',
-        contactPicture: 'img/avatar_1.jpg'
-      },
-      {
-        name: 'Fabio',
-        contactMessage: 'Ciao',
-        userMessage: 'Che fai?',
-        contactPicture: 'img/avatar_2.jpg'
-      },
-      {
-        name: 'Giovanni',
-        contactMessage: 'Hello',
-        userMessage: 'How are you?',
-        contactPicture: 'img/avatar_3.jpg'
-      },
-      {
-       name: 'Antonio',
-       contactMessage: 'Oi',
-       userMessage: 'Tudo bem?',
-       contactPicture: 'img/avatar_4.jpg'
-     },
+    contactsList: [
      {
-       name: 'Rachele',
-       contactMessage: 'Hola',
-       userMessage: '¿Cómo estás?',
-       contactPicture: 'img/avatar_6.jpg'
-     },
+      name: 'Michele',
+      contactPicture: 'img/avatar_1.jpg',
+      allMessages: [
+        {
+          message: "Hello",
+          origin: "sent",
+          hour: "12:19"
+        },
+        {
+          message: "Hey",
+          origin: "received",
+          hour: "14:04"
+        },
+        {
+          message: "How are you?",
+          origin: "sent",
+          hour: "18:10"
+        }
+      ]
+    },
+    {
+     name: 'Rachele',
+     contactPicture: 'img/avatar_2.jpg',
+     allMessages: [
+       {
+         message: "Ciao!",
+         origin: "sent",
+         hour: "12:19"
+       },
+       {
+         message: "Ehi...",
+         origin: "received",
+         hour: "14:04"
+       },
+       {
+         message: "Come stai?",
+         origin: "sent",
+         hour: "18:10"
+       }
+     ]
+    },
+    {
+    name: 'Matteo',
+    contactPicture: 'img/avatar_3.jpg',
+    allMessages: [
+      {
+        message: "ciao",
+        origin: "sent",
+        hour: "12:19"
+      },
+      {
+        message: "sto bene",
+        origin: "received",
+        hour: "14:04"
+      },
+      {
+        message: "interessante",
+        origin: "sent",
+        hour: "18:10"
+      }
+    ]
+    },
+    {
+     name: 'Giorgio',
+     contactPicture: 'img/avatar_4.jpg',
+     allMessages: [
+       {
+         message: "ciao",
+         origin: "sent",
+         hour: "12:19"
+       },
+       {
+         message: "sto bene",
+         origin: "received",
+         hour: "14:04"
+       },
+       {
+         message: "interessante",
+         origin: "sent",
+         hour: "18:10"
+       }
+     ]
+    },
+ {
+  name: 'Mattia',
+  contactPicture: 'img/avatar_5.jpg',
+  allMessages: [
+    {
+      message: "ciao",
+      origin: "sent",
+      hour: "12:19"
+    },
+    {
+      message: "sto bene",
+      origin: "received",
+      hour: "14:04"
+    },
+    {
+      message: "interessante",
+      origin: "sent",
+      hour: "18:10"
+    }
+  ]
+ }
     ]
   },
    methods: {

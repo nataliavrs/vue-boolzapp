@@ -289,44 +289,32 @@ a:visited {
   display: flex;
   flex-direction: column;
   overflow: scroll;
-
 }
 
-.message-block-user {
-  display: flex;
-  flex-direction: row-reverse;
-
-
+.sent {
+  background-color: #CBFBB3;
+  align-self: flex-end;
 }
 
-.message-block-contact {
-  display: flex;
-
-}
-
-.user-message, .contact-message {
+.received {
   background-color: white;
+  align-self: flex-start;
+}
+
+.received, .sent {
   padding: 10px;
   border-radius: 10px;
+  min-width: 30%;
+  max-width: 40%;
+  margin: 30px;
+
 }
 
-.user-message span:last-child, .contact-message span:last-child {
+.sent span:last-child, .received span:last-child {
   display: block;
   font-size: .7em;
   color: #B5B9BB;
   text-align: right;
-
-
-}
-
-.user-message {
-  background-color: #CBFBB3;
-}
-
-.contact-message, .user-message {
-  min-width: 50%;
-  max-width: 50%;
-  margin: 30px;
 }
 
 /* chat footer */
