@@ -65,11 +65,11 @@
           <div class="search-bothcontainer">
 
             <div class="search-icon">
-              <i class="fas fa-search" @click="filterContacts()"></i>
+              <i class="fas fa-search"></i>
             </div>
 
             <div class="search-input">
-              <input type="text" v-model="searchInput" placeholder="Cerca o inizia una nuova chat" v-on:keyup.enter="filterContacts()">
+              <input type="text" v-model="searchInput" placeholder="Cerca o inizia una nuova chat">
             </div>
 
           </div>
@@ -77,8 +77,9 @@
         </div>
         <!-- all chats -->
         <div class="chats-container">
+          <!-- add class that change bg to grey chat opened -->
 
-          <div v-for="(item, index) in contactsList" class="single-chat" :class="(searchInput === item.name ? 'show' : searchInput === '' ? '' : 'hidden')" @click="openChat(index)">
+          <div v-for="(item, index) in contactsList" class="single-chat" :class="(searchInput == item.name[0] ? 'show' : searchInput === '' ? '' : 'hidden')" @click="openChat(index)">
 
             <div class="contact-picture">
               <img v-bind:src="item.contactPicture">

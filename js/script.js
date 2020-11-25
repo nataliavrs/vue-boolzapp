@@ -225,7 +225,6 @@ var app = new Vue({
       //   return element.name === this.searchInput;
       // });
 
-
       console.log(filter);
       console.log(this.searchInput);
 
