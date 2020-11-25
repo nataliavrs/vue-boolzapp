@@ -81,22 +81,19 @@
           <div v-for="(item, index) in contactsList" class="single-chat" @click="openChat(index)" :class="(index == indexChat ? 'opened' : '')">
 
             <div class="contact-picture">
-              <img v-bind:src="contactsList[index].contactPicture">
+              <img v-bind:src="item.contactPicture">
             </div>
 
             <div class="contact-name">
-              <span>{{contactsList[index].name}}</span>
+              <span>{{item.name}}</span>
             </div>
 
             <div class="contact-message">
-              <!-- <span v-for="(item, index) in contactsList[index].allMessages">{{item.message}} -->
-              <!-- </span> -->
-
+              <span>{{item.allMessages[item.allMessages.length - 1].message}}</span>
             </div>
 
             <div class="contact-hour">
-              <!-- <span v-for="item in contactsList[index].allMessages">{{item.hour[0]}} -->
-              <!-- </span> -->
+              <!-- fare -->
             </div>
 
           </div>

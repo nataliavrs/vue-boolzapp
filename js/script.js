@@ -5,24 +5,24 @@ var app = new Vue({
     openClass: "",
     indexChat: 0,
     contactsList: [
-     {
+    {
       name: 'Michele',
       contactPicture: 'img/avatar_1.jpg',
       allMessages: [
         {
           message: "Hello",
           origin: "sent",
-          hour: "1111"
+          hour: "21:43"
         },
         {
           message: "Hey",
           origin: "received",
-          hour: "1111"
+          hour: "15:43"
         },
         {
           message: "How are you?",
           origin: "sent",
-          hour: "1111"
+          hour: "17:24"
         }
       ]
     },
@@ -33,17 +33,17 @@ var app = new Vue({
        {
          message: "Ciao!",
          origin: "sent",
-         hour: "2222"
+         hour: "12:09"
        },
        {
          message: "Ehi...",
          origin: "received",
-         hour: "2222"
+         hour: "23:09"
        },
        {
          message: "Come stai?",
          origin: "sent",
-         hour: "2222"
+         hour: "07:56"
        }
      ]
     },
@@ -54,17 +54,17 @@ var app = new Vue({
       {
         message: "ciao",
         origin: "sent",
-        hour: "3333"
+        hour: "12:09"
       },
       {
         message: "sto bene",
         origin: "received",
-        hour: "3333"
+        hour: "08:09"
       },
       {
         message: "interessante",
         origin: "sent",
-        hour: "3333"
+        hour: "10:39"
       }
     ]
     },
@@ -75,44 +75,44 @@ var app = new Vue({
        {
          message: "ciao",
          origin: "sent",
-         hour: "4444"
+         hour: "05:56"
        },
        {
          message: "sto bene",
          origin: "received",
-         hour: "4444"
+         hour: "18:12"
        },
        {
          message: "interessante",
          origin: "sent",
-         hour: "4444"
+         hour: "15:09"
        }
      ]
     },
- {
-  name: 'Mattia',
-  contactPicture: 'img/avatar_5.jpg',
-  allMessages: [
     {
-      message: "ciao",
-      origin: "sent",
-      hour: "12:19"
-    },
-    {
-      message: "sto bene",
-      origin: "received",
-      hour: "14:04"
-    },
-    {
-      message: "interessante",
-      origin: "sent",
-      hour: "18:10"
-    }
-  ]
- }
+    name: 'Mattia',
+    contactPicture: 'img/avatar_5.jpg',
+    allMessages: [
+      {
+        message: "ciao",
+        origin: "sent",
+        hour: "12:19"
+      },
+      {
+        message: "sto bene",
+        origin: "received",
+        hour: "14:04"
+      },
+      {
+        message: "interessante",
+        origin: "sent",
+        hour: "18:10"
+      }
+    ]
+   }
     ]
   },
-   methods: {
+  methods: {
      openChat: function(index) {
 
        this.indexChat = index;
@@ -121,22 +121,53 @@ var app = new Vue({
      },
      sendMessage: function() {
 
-      this.contactsList[this.indexChat].allMessages.push(
-        {
-          message: this.inputMessage,
-          origin: "sent",
-          hour: "0000"
+       if (this.inputMessage == "") {
 
-        }
+       }  else {
 
-      );
+         this.contactsList[this.indexChat].allMessages.push(
+           {
+             message: this.inputMessage,
+             origin: "sent",
+             hour: "12:09"
+           }
 
-      setTimeout(() => this.contactsList[this.indexChat].allMessages.push ({
-        message: 'ok...',
-        origin: 'received',
-        hour: '0000'
-      }), 1000);
+         );
+
+         this.inputMessage = "";
+
+         setTimeout(() => this.contactsList[this.indexChat].allMessages.push (
+           {
+           message: 'ok...',
+           origin: 'received',
+           hour: '12:10'
+         }), 1500);
+
+       }
      }
+  },
+  updated: function () {
 
-  }
+    var container = document.querySelector(".chat-body");
+    var scrollHeight = container.scrollHeight;
+    container.scrollTop = scrollHeight;
+
+  },
+  // CURRENT HOUR
+  hour: function() {
+
+    let seconds = this.nowHour.getSeconds();
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    let hour = this.nowHour.getHours()
+    let minute = this.nowHour.getMinutes()
+    if (minute < 10) {
+      minute = "0" + minute;
+    }
+
+    return `${hour}:${minute}:${seconds}`
+
+  },
+
 })
