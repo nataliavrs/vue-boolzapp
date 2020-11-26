@@ -241,7 +241,8 @@ a:visited {
 /* current chat header */
 .chat-header
 ,.chat-footer {
-  min-height: 64px;
+  min-height: 60px;
+  max-height: 60px;
   background-color: #F4EEE9;
   display: flex;
   padding: 5px;

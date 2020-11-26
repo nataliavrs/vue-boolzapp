@@ -10,13 +10,13 @@ var app = new Vue({
     todayDate: new Date (),
     nowHour: new Date (),
 
-    searchInput: '',
-
+    searchInput: "",
 
     contactsList: [
     {
-      name: 'michele',
+      name: 'Michele',
       contactPicture: 'img/avatar_1.jpg',
+      status: true,
       allMessages: [
         {
           message: "Hello",
@@ -36,29 +36,53 @@ var app = new Vue({
       ]
     },
     {
-     name: 'rachele',
+     name: 'Rachele',
      contactPicture: 'img/avatar_6.jpg',
+     status: true,
      allMessages: [
        {
-         message: "Ciao!",
+         message: "Ciao! Ti ricordi quella cosa che avevo lasciato a casa tua?",
          origin: "sent",
          hour: "12:09"
        },
        {
-         message: "Ehi...",
+         message: "Beh, come dimenticare, amica mia. Cos'è successo?",
          origin: "received",
          hour: "23:09"
        },
        {
-         message: "Come stai?",
+         message: "La stavo cercando oggi e non la trovavo... Alla fine ho scoperto che l'aveva presa mia madre!!!",
          origin: "sent",
          hour: "07:56"
        }
      ]
     },
     {
-    name: 'matteo',
+  name: 'Britney',
+  contactPicture: 'img/avatar_8.jpg',
+  status: true,
+  allMessages: [
+    {
+      message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      origin: "sent",
+      hour: "12:19"
+    },
+    {
+      message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      origin: "received",
+      hour: "14:04"
+    },
+    {
+      message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      origin: "sent",
+      hour: "18:10"
+    }
+  ]
+  },
+    {
+    name: 'Matteo',
     contactPicture: 'img/avatar_3.jpg',
+    status: true,
     allMessages: [
       {
         message: "Let's hang out later?",
@@ -80,6 +104,7 @@ var app = new Vue({
     {
      name: 'Giorgio',
      contactPicture: 'img/avatar_4.jpg',
+     status: true,
      allMessages: [
        {
          message: "Mamma mia, che dire",
@@ -101,6 +126,7 @@ var app = new Vue({
     {
     name: 'Antonio',
     contactPicture: 'img/avatar_2.jpg',
+    status: true,
     allMessages: [
       {
         message: "Beh, o que dizer",
@@ -120,63 +146,44 @@ var app = new Vue({
     ]
   },
     {
-  name: 'Antonio',
-  contactPicture: 'img/avatar_2.jpg',
+  name: 'Giuseppe',
+  contactPicture: 'img/avatar_5.jpg',
+  status: true,
   allMessages: [
     {
-      message: "Beh, o que dizer",
+      message: "Studiamo insieme?",
       origin: "sent",
       hour: "12:19"
     },
     {
-      message: "Sono un lumacoide",
+      message: "Sì, a che ora?",
       origin: "received",
       hour: "14:04"
     },
     {
-      message: "Certo che sì",
+      message: "Ti farò sapere!",
       origin: "sent",
       hour: "18:10"
     }
   ]
   },
     {
-  name: 'Antonio',
-  contactPicture: 'img/avatar_2.jpg',
+  name: 'Alberto',
+  contactPicture: 'img/avatar_7.jpg',
+  status: true,
   allMessages: [
     {
-      message: "Beh, o que dizer",
+      message: "E' da un po' che non ci vediamo...",
       origin: "sent",
       hour: "12:19"
     },
     {
-      message: "Sono un lumacoide",
+      message: "Troppi impegni, purtroppo.",
       origin: "received",
       hour: "14:04"
     },
     {
-      message: "Certo che sì",
-      origin: "sent",
-      hour: "18:10"
-    }
-  ]
-  },
-    {
-  name: 'Antonio',
-  contactPicture: 'img/avatar_2.jpg',
-  allMessages: [
-    {
-      message: "Beh, o que dizer",
-      origin: "sent",
-      hour: "12:19"
-    },
-    {
-      message: "Sono un lumacoide",
-      origin: "received",
-      hour: "14:04"
-    },
-    {
-      message: "Certo che sì",
+      message: "Vero, sto lavorando sempre.",
       origin: "sent",
       hour: "18:10"
     }
@@ -186,14 +193,14 @@ var app = new Vue({
   },
   methods: {
     // SHOW CLICKED CHAT
-     openChat: function(index) {
+    openChat: function(index) {
 
        this.indexChat = index;
        this.openClass = "opened";
 
      },
-     // SEND MESSAGE & AUTOMATIC ANSWER
-     sendMessage: function() {
+    // SEND MESSAGE & AUTOMATIC ANSWER
+    sendMessage: function() {
 
        if (this.inputMessage == "") {
 
@@ -218,19 +225,22 @@ var app = new Vue({
 
        }
      },
-     // FILTER
-     filterContacts: function() {
+    // FILTER
+    filterContacts: function() {
 
-      // const filter = this.contactsList.filter((element) => {
-      //   return element.name === this.searchInput;
-      // });
+      this.contactsList.forEach((element) => {
 
-      console.log(filter);
-      console.log(this.searchInput);
+        if ( element.name.toLowerCase().includes(this.searchInput.toLowerCase()) ) {
+          element.status = true;
+        } else {
+          element.status = false;
+        }
+
+      });
 
      },
-     // CURRENT HOUR
-     currentHour: function() {
+    // CURRENT HOUR
+    currentHour: function() {
 
        let seconds = this.nowHour.getSeconds();
        if (seconds < 10) {
@@ -245,8 +255,8 @@ var app = new Vue({
        return `${hour}:${minute}:${seconds}`
 
      },
-     // CURRENT DAY
-     currentDay: function() {
+    // CURRENT DAY
+    currentDay: function() {
 
        let day = this.todayDate.getDate();
        let month = this.todayDate.getMonth() + 1
