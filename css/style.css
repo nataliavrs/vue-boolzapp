@@ -130,7 +130,6 @@ a:visited {
   justify-content: center;
   flex-direction: column;
   padding: 10px;
-
 }
 
 .bell-message span:last-child {
@@ -139,37 +138,40 @@ a:visited {
   text-decoration: underline;
 }
 
-
-
 /* search block */
 .search {
   min-height: 50px;
   background-color: #FAFAFA;
   display: flex;
   align-items: center;
-
 }
 
 .search-bothcontainer {
   background-color: white;
   display: flex;
   align-items: center;
-  border: solid 1px lightgrey;
+  border: solid 1px #F5F5F5;
   border-radius: 4px;
-  padding: 8px;
-  width: 90%;
-  margin: auto;
+  margin: 10px;
+  align-self: center;
 }
 
 .search-icon  {
   color: #B5B9BB;
+  min-height: 30px;
+  display: flex;
+  padding: 7px;
+}
+
+.search-icon i {
+  align-self: center;
 }
 
 .search-input input {
   border: none;
-  width: 260px;
+  width: 300px;
   overflow: hidden;
-  margin: 0 5px;
+  min-height: 30px;
 }
 
 .search-input ::placeholder {
@@ -289,9 +291,9 @@ a:visited {
 }
 
 .chat-body {
-  min-height: calc(100% - 128px);
+  min-height: calc(100% - 120px);
   background-image: url("../img/mine.jpg");
-  background-size: auto;
+  /* background-size: auto; */
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -326,7 +328,7 @@ a:visited {
 /* chat footer */
 
 .chat-footer {
-  height: 50px;
+  min-height: 60px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -373,6 +375,11 @@ a:visited {
   .main-bg {
     display: none;
   }
+
+  .search-input input {
+    width: 450px;
+  }
+
 
 }
 
