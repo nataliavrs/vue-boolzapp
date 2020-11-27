@@ -4,7 +4,7 @@ var app = new Vue({
     userName: "Natália Veras",
 
     inputMessage: "",
-    openClass: "",
+    // openClass: "",
     indexChat: 0,
 
     todayDate: new Date (),
@@ -26,12 +26,12 @@ var app = new Vue({
         {
           message: "Hey",
           origin: "received",
-          hour: "15:43"
+          hour: "21:45"
         },
         {
           message: "How are you?",
           origin: "sent",
-          hour: "17:24"
+          hour: "21:52"
         }
       ]
     },
@@ -84,21 +84,7 @@ var app = new Vue({
     contactPicture: 'img/avatar_3.jpg',
     status: true,
     allMessages: [
-      {
-        message: "Let's hang out later?",
-        origin: "sent",
-        hour: "12:09"
-      },
-      {
-        message: "Uhmm, where?",
-        origin: "received",
-        hour: "08:09"
-      },
-      {
-        message: "I don't know, let me think...",
-        origin: "sent",
-        hour: "10:39"
-      }
+      {},
     ]
     },
     {
@@ -196,10 +182,10 @@ var app = new Vue({
     openChat: function(index) {
 
        this.indexChat = index;
-       this.openClass = "opened";
+       // this.openClass = "opened";
 
      },
-    // SEND MESSAGE & AUTOMATIC ANSWER
+    // SEND MESSAGE
     sendMessage: function() {
 
        if (this.inputMessage == "") {
@@ -215,15 +201,24 @@ var app = new Vue({
          );
 
          this.inputMessage = "";
-
-         setTimeout(() => this.contactsList[this.indexChat].allMessages.push (
-           {
-           message: 'Sì, hai ragione secondo me. Ci penserò, grazie!',
-           origin: 'received',
-           hour: this.currentHour()
-         }), 1500);
+         this.automaticAnswer();
 
        }
+     },
+    // AUTOMATIC ANSWER
+    automaticAnswer: function (){
+
+       const randomanswers = ['Bah secondo me dovremmo tutti andare su una montagna e non tornare più', '*nubi sticker*', 'Ma che dici', 'Che slurpina', 'Ma queste cose... nel 2020!', 'Beh, che dire', 'Un bel lorem ipsum ci stava però', 'Vita nubi anche oggi', 'I <3 cuccioline'];
+
+       setTimeout(() => this.contactsList[this.indexChat].allMessages.push (
+         {
+         message: randomanswers[random],
+         origin: 'received',
+         hour: this.currentHour()
+       }), 1500);
+
+       let random = Math.floor(Math.random() * randomanswers.length);
+
      },
     // FILTER
     filterContacts: function() {
