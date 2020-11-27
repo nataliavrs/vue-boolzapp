@@ -55,30 +55,30 @@ var app = new Vue({
      ]
     },
     {
-  name: 'Britney Spears',
-  contactPicture: 'img/britney-avatar.jpg',
-  status: true,
-  allMessages: [
-    {
-      message: "You tell me you're in love with me, like you can't take your pretty eyes away from me",
-      origin: "sent",
-      hour: "12:19"
-    },
-    {
-      message: "It's not that I don't wanna stay, but every time you come too close I move away",
-      origin: "received",
-      hour: "14:04"
-    },
-    {
-      message: "You'll see that you're the only one for me",
-      origin: "sent",
-      hour: "18:10"
-    },
-    {
-      message: "I wanna believe in everything that you say, 'cause it sounds so good. But if you really want me move slow",
-      origin: "received",
-      hour: "18:10"
-    }
+    name: 'Britney Spears',
+    contactPicture: 'img/britney-avatar.jpg',
+    status: true,
+    allMessages: [
+      {
+        message: "You tell me you're in love with me, like you can't take your pretty eyes away from me",
+        origin: "sent",
+        hour: "12:19"
+      },
+      {
+        message: "It's not that I don't wanna stay, but every time you come too close I move away",
+        origin: "received",
+        hour: "14:04"
+      },
+      {
+        message: "You'll see that you're the only one for me",
+        origin: "sent",
+        hour: "18:10"
+      },
+      {
+        message: "I wanna believe in everything that you say, 'cause it sounds so good. But if you really want me move slow",
+        origin: "received",
+        hour: "18:10"
+      }
   ]
   },
     {
@@ -134,48 +134,48 @@ var app = new Vue({
     ]
   },
     {
-  name: 'Giuseppe',
-  contactPicture: 'img/avatar_5.jpg',
-  status: true,
-  allMessages: [
-    {
-      message: "Studiamo insieme?",
-      origin: "sent",
-      hour: "12:19"
-    },
-    {
-      message: "Sì, a che ora?",
-      origin: "received",
-      hour: "14:04"
-    },
-    {
-      message: "Ti farò sapere!",
-      origin: "sent",
-      hour: "18:10"
-    }
+    name: 'Giuseppe',
+    contactPicture: 'img/avatar_5.jpg',
+    status: true,
+    allMessages: [
+      {
+        message: "Studiamo insieme?",
+        origin: "sent",
+        hour: "12:19"
+      },
+      {
+        message: "Sì, a che ora?",
+        origin: "received",
+        hour: "14:04"
+      },
+      {
+        message: "Ti farò sapere!",
+        origin: "sent",
+        hour: "18:10"
+      }
   ]
   },
     {
-  name: 'Alberto',
-  contactPicture: 'img/avatar_7.jpg',
-  status: true,
-  allMessages: [
-    {
-      message: "E' da un po' che non ci vediamo...",
-      origin: "sent",
-      hour: "12:19"
-    },
-    {
-      message: "Troppi impegni, purtroppo.",
-      origin: "received",
-      hour: "14:04"
-    },
-    {
-      message: "Vero, sto lavorando sempre.",
-      origin: "sent",
-      hour: "18:10"
-    }
-  ]
+    name: 'Alberto',
+    contactPicture: 'img/avatar_7.jpg',
+    status: true,
+    allMessages: [
+      {
+        message: "E' da un po' che non ci vediamo...",
+        origin: "sent",
+        hour: "12:19"
+      },
+      {
+        message: "Troppi impegni, purtroppo.",
+        origin: "received",
+        hour: "14:04"
+      },
+      {
+        message: "Vero, sto lavorando sempre.",
+        origin: "sent",
+        hour: "18:10"
+      }
+    ]
   },
     ]
   },
@@ -269,7 +269,6 @@ var app = new Vue({
       } else {
         this.dropMenu = false;
       }
-
 
     },
   },

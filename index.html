@@ -146,20 +146,13 @@
         <!-- current chat body -->
         <div class="chat-body">
 
-          <span v-for="(messages, index) in contactsList[indexChat].allMessages" v-bind:class="(messages.origin)">
+          <span v-for="(messages, index) in contactsList[indexChat].allMessages"
+          v-bind:class="(messages.origin)">
 
             <span>{{messages.message}}</span>
             <span class="message-hour">{{messages.hour}}
               <i @click="dropDown(index)" class="fas fa-chevron-down arrow"></i>
             </span>
-
-            <!-- <span
-            class="arrow"
-            @click="dropDown(index)"
-            >
-            <i class="fas fa-chevron-down"></i>
-
-            </span> -->
 
             <div class="drop-down"
             v-bind:class="dropMenu == true ? 'drop-downopen' : '' ">
