@@ -2,15 +2,12 @@ var app = new Vue({
   el: "#app",
   data: {
     userName: "Natália Veras",
-
-    inputMessage: "",
-    // openClass: "",
     indexChat: 0,
-
+    inputMessage: "",
+    searchInput: "",
+    dropMenu: false,
     todayDate: new Date (),
     nowHour: new Date (),
-
-    searchInput: "",
 
     contactsList: [
     {
@@ -58,23 +55,28 @@ var app = new Vue({
      ]
     },
     {
-  name: 'Britney',
-  contactPicture: 'img/avatar_8.jpg',
+  name: 'Britney Spears',
+  contactPicture: 'img/britney-avatar.jpg',
   status: true,
   allMessages: [
     {
-      message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      message: "You tell me you're in love with me, like you can't take your pretty eyes away from me",
       origin: "sent",
       hour: "12:19"
     },
     {
-      message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      message: "It's not that I don't wanna stay, but every time you come too close I move away",
       origin: "received",
       hour: "14:04"
     },
     {
-      message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      message: "You'll see that you're the only one for me",
       origin: "sent",
+      hour: "18:10"
+    },
+    {
+      message: "I wanna believe in everything that you say, 'cause it sounds so good. But if you really want me move slow",
+      origin: "received",
       hour: "18:10"
     }
   ]
@@ -182,7 +184,6 @@ var app = new Vue({
     openChat: function(index) {
 
        this.indexChat = index;
-       // this.openClass = "opened";
 
      },
     // SEND MESSAGE
@@ -260,6 +261,17 @@ var app = new Vue({
        return `${day}/${month}/${year}`
 
      },
+    // MESSAGE DROP-DOWN MENU
+    dropDown: function(index) {
+
+      if (this.dropMenu == false) {
+        this.dropMenu = true;
+      } else {
+        this.dropMenu = false;
+      }
+
+
+    },
   },
   // SCROLL TO LAST MESSAGE
   updated: function () {

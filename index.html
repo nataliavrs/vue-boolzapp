@@ -117,7 +117,7 @@
           class="chat-header"
           v-for="(contact, index) in contactsList"
           v-if="index == indexChat"
-        >
+          >
 
           <div class="profile-picture">
             <img
@@ -146,14 +146,31 @@
         <!-- current chat body -->
         <div class="chat-body">
 
-          <span v-for="item in contactsList[indexChat].allMessages" v-bind:class="(item.origin)">
+          <span v-for="(messages, index) in contactsList[indexChat].allMessages" v-bind:class="(messages.origin)">
 
-            <span>{{item.message}}</span>
-            <span>{{item.hour}}</span>
+            <span>{{messages.message}}</span>
+            <span class="message-hour">{{messages.hour}}
+              <i @click="dropDown(index)" class="fas fa-chevron-down arrow"></i>
+            </span>
+
+            <!-- <span
+            class="arrow"
+            @click="dropDown(index)"
+            >
+            <i class="fas fa-chevron-down"></i>
+
+            </span> -->
+
+            <div class="drop-down"
+            v-bind:class="dropMenu == true ? 'drop-downopen' : '' ">
+              <span>Info messaggio</span>
+              <span>Cancella messaggio</span>
+            </div>
 
           </span>
 
         </div>
+
         <!-- chat footer -->
         <div class="chat-footer">
 

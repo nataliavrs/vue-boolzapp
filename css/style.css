@@ -293,7 +293,6 @@ a:visited {
 .chat-body {
   min-height: calc(100% - 120px);
   background-image: url("../img/mine.jpg");
-  /* background-size: auto; */
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -315,14 +314,55 @@ a:visited {
   min-width: 30%;
   max-width: 40%;
   margin: 30px;
-
+  position: relative;
 }
 
-.sent span:last-child, .received span:last-child {
+.sent .message-hour, .received .message-hour {
   display: block;
   font-size: .7em;
   color: #B5B9BB;
   text-align: right;
+}
+
+/* drop down menu */
+
+.received .arrow, .sent .arrow {
+  display: none !important;
+  /* position: absolute; */
+  /* top: 25px; */
+  /* left: 180px; */
+}
+
+.received:hover .arrow , .sent:hover .arrow {
+  display: inline-block !important;
+}
+
+.received:hover .arrow i , .sent:hover .arrow i {
+  font-size: 1em;
+  color: #B5B9BB;
+}
+
+.drop-down {
+  background-color: white;
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 90%;
+  padding: 5px;
+  width: 130px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px lightgrey;
+  text-align: center;
+  margin: 10px;
+}
+
+.drop-down span {
+  font-size: .8em;
+}
+
+.drop-downopen {
+  display: inline-block;
+
 }
 
 /* chat footer */
