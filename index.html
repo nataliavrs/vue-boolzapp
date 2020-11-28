@@ -93,12 +93,12 @@
 
             <div class="contact-chat">
               <span>{{contact.name}}</span>
-              <span>{{contact.allMessages[contact.allMessages.length - 1].message}}
+              <span class="message-preview" v-if="contact.allMessages.length > 0">{{contact.allMessages[contact.allMessages.length - 1].message}}
               </span>
             </div>
 
             <div class="contact-hour">
-              <span>{{currentDay()}}
+              <span v-if="contact.allMessages.length > 0">{{currentDay()}}
                     {{contact.allMessages[contact.allMessages.length - 1].hour}}
               </span>
             </div>
@@ -129,8 +129,10 @@
           <div class="person-name">
 
             <span>{{contact.name}}</span>
-            <span>Ultimo accesso oggi</span>
-            <span>{{currentDay()}} alle
+            <span >
+              Ultimo accesso oggi
+            </span>
+            <span v-if="contact.allMessages.length > 0">{{currentDay()}} alle
                   {{contact.allMessages[contact.allMessages.length - 1].hour}}
             </span>
 
@@ -150,23 +152,16 @@
           v-bind:class="(messages.origin)">
 
             <span>{{messages.message}}</span>
+
             <span class="message-hour">{{messages.hour}}
-              <i @click="dropDown(index, messages)" class="fas fa-chevron-down arrow"></i>
+              <i @click="dropDown(index)" class="fas fa-chevron-down arrow"></i>
             </span>
 
             <div class="drop-down"
             v-bind:class="messages.dropdown ? 'drop-downopen' : '' ">
               <span>Info messaggio</span>
-              <span>Cancella messaggio</span>
+              <span @click="deleteMessage(index)">Cancella messaggio</span>
             </div>
-
-            <!-- <div
-              class="drop-down drop-downopen"
-              v-if="messages.dropdown"
-              >
-              <span>Info messaggio</span>
-              <span>Cancella messaggio</span>
-            </div> -->
 
           </span>
 

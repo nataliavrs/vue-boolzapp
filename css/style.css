@@ -191,7 +191,7 @@ a:visited {
   background-color: #E9EBEB;
 }
 
-.single-chat .contact-chat span:last-child {
+.single-chat .contact-chat .message-preview {
   color: grey;
   font-size: .8em;
   text-overflow: ellipsis;
@@ -317,9 +317,6 @@ a:visited {
 
 .received .arrow, .sent .arrow {
   display: none !important;
-  /* position: absolute; */
-  /* top: 25px; */
-  /* left: 180px; */
 }
 
 .received:hover .arrow , .sent:hover .arrow {

@@ -289,17 +289,28 @@ var app = new Vue({
 
      },
     // MESSAGE DROP-DOWN MENU
-    dropDown: function(index, messages) {
+    dropDown: function(index) {
 
      let message = this.contactsList[this.indexChat].allMessages[index];
 
      if (message.dropdown == false) {
       message.dropdown = true;
-    } else
+    } else {
       message.dropdown = false;
+    }
 
-     // console.log(menu);
-     // console.log(this.contactsList[this.indexChat].allMessages[index]);
+
+      console.log(this.contactsList[this.indexChat].allMessages[index]);
+
+
+    },
+    // DELETE MESSAGE
+    deleteMessage: function(index) {
+
+     this.contactsList[this.indexChat].allMessages.splice(index, 1);
+
+     console.log(index);
+     console.log(this.contactsList[this.indexChat].allMessages[index]);
 
     },
   },
