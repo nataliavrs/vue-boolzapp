@@ -229,23 +229,29 @@ var app = new Vue({
 
          this.inputMessage = "";
          this.automaticAnswer();
+         this.sentAudio();
 
        }
      },
     // AUTOMATIC ANSWER
     automaticAnswer: function (){
-
-       const randomanswers = ['Bah secondo me dovremmo tutti andare su una montagna e non tornare più', '*nubi sticker*', 'Ma che dici', 'Che slurpina', 'Ma queste cose... nel 2020!', 'Beh, che dire', 'Un bel lorem ipsum ci stava però', 'Vita nubi anche oggi', 'I <3 cuccioline'];
-
-       setTimeout(() => this.contactsList[this.indexChat].allMessages.push (
+      
+       setTimeout(() =>
+       this.contactsList[this.indexChat].allMessages.push (
          {
          message: randomanswers[random],
          origin: 'received',
          hour: this.currentHour(),
          dropdown: false,
-       }), 1500);
+        }
+      )
+      , 1500);
 
-       let random = Math.floor(Math.random() * randomanswers.length);
+     setTimeout( () => this.receivedAudio(), 1500 );
+
+     const randomanswers = ['Bah secondo me dovremmo tutti andare su una montagna e non tornare più', '*nubi sticker*', 'Ma che dici', 'Che slurpina', 'Ma queste cose... nel 2020!', 'Beh, che dire', 'Un bel lorem ipsum ci stava però', 'Vita nubi anche oggi', 'I <3 cuccioline'];
+
+     let random = Math.floor(Math.random() * randomanswers.length);
 
      },
     // FILTER
@@ -313,6 +319,18 @@ var app = new Vue({
      console.log(this.contactsList[this.indexChat].allMessages[index]);
 
     },
+    // SENT MESSAGE AUDIO
+    sentAudio: function () {
+      let audio = new Audio("sounds/message_sent.mp3");
+      audio.volume = 0.5;
+      audio.play();
+    },
+    // RECEIVED MESSAGE AUDIO
+    receivedAudio: function () {
+      let audio = new Audio("sounds/message_received.mp3");
+      audio.volume = 0.5;
+      audio.play();
+    }
   },
   // SCROLL TO LAST MESSAGE
   updated: function () {
