@@ -151,14 +151,22 @@
 
             <span>{{messages.message}}</span>
             <span class="message-hour">{{messages.hour}}
-              <i @click="dropDown(index)" class="fas fa-chevron-down arrow"></i>
+              <i @click="dropDown(index, messages)" class="fas fa-chevron-down arrow"></i>
             </span>
 
             <div class="drop-down"
-            v-bind:class="dropMenu == true ? 'drop-downopen' : '' ">
+            v-bind:class="messages.dropdown ? 'drop-downopen' : '' ">
               <span>Info messaggio</span>
               <span>Cancella messaggio</span>
             </div>
+
+            <!-- <div
+              class="drop-down drop-downopen"
+              v-if="messages.dropdown"
+              >
+              <span>Info messaggio</span>
+              <span>Cancella messaggio</span>
+            </div> -->
 
           </span>
 

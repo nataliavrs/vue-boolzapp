@@ -3,9 +3,12 @@ var app = new Vue({
   data: {
     userName: "Natália Veras",
     indexChat: 0,
+
     inputMessage: "",
+
     searchInput: "",
-    dropMenu: false,
+    indexMessage: 0,
+
     todayDate: new Date (),
     nowHour: new Date (),
 
@@ -18,17 +21,20 @@ var app = new Vue({
         {
           message: "Hello",
           origin: "sent",
-          hour: "21:43"
+          hour: "21:43",
+          dropdown: '',
         },
         {
           message: "Hey",
           origin: "received",
-          hour: "21:45"
+          hour: "21:45",
+          dropdown: '',
         },
         {
           message: "How are you?",
           origin: "sent",
-          hour: "21:52"
+          hour: "21:52",
+          dropdown: '',
         }
       ]
     },
@@ -40,17 +46,20 @@ var app = new Vue({
        {
          message: "Ciao! Ti ricordi quella cosa che avevo lasciato a casa tua?",
          origin: "sent",
-         hour: "12:09"
+         hour: "12:09",
+         dropdown: '',
        },
        {
          message: "Beh, come dimenticare, amica mia. Cos'è successo?",
          origin: "received",
-         hour: "23:09"
+         hour: "23:09",
+         dropdown: '',
        },
        {
          message: "La stavo cercando oggi e non la trovavo... Alla fine ho scoperto che l'aveva presa mia madre!!!",
          origin: "sent",
-         hour: "07:56"
+         hour: "07:56",
+         dropdown: '',
        }
      ]
     },
@@ -62,22 +71,26 @@ var app = new Vue({
       {
         message: "You tell me you're in love with me, like you can't take your pretty eyes away from me",
         origin: "sent",
-        hour: "12:19"
+        hour: "12:19",
+        dropdown: '',
       },
       {
         message: "It's not that I don't wanna stay, but every time you come too close I move away",
         origin: "received",
-        hour: "14:04"
+        hour: "14:04",
+        dropdown: '',
       },
       {
         message: "You'll see that you're the only one for me",
         origin: "sent",
-        hour: "18:10"
+        hour: "18:10",
+        dropdown: '',
       },
       {
         message: "I wanna believe in everything that you say, 'cause it sounds so good. But if you really want me move slow",
         origin: "received",
-        hour: "18:10"
+        hour: "18:10",
+        dropdown: '',
       }
   ]
   },
@@ -97,17 +110,20 @@ var app = new Vue({
        {
          message: "Mamma mia, che dire",
          origin: "sent",
-         hour: "05:56"
+         hour: "05:56",
+         dropdown: '',
        },
        {
          message: "Che ne so",
          origin: "received",
-         hour: "18:12"
+         hour: "18:12",
+         dropdown: '',
        },
        {
          message: "Va bene, dai",
          origin: "sent",
-         hour: "15:09"
+         hour: "15:09",
+         dropdown: '',
        }
      ]
     },
@@ -119,17 +135,20 @@ var app = new Vue({
       {
         message: "Beh, o que dizer",
         origin: "sent",
-        hour: "12:19"
+        hour: "12:19",
+        dropdown: '',
       },
       {
         message: "Sono un lumacoide",
         origin: "received",
-        hour: "14:04"
+        hour: "14:04",
+        dropdown: '',
       },
       {
         message: "Certo che sì",
         origin: "sent",
-        hour: "18:10"
+        hour: "18:10",
+        dropdown: '',
       }
     ]
   },
@@ -141,17 +160,20 @@ var app = new Vue({
       {
         message: "Studiamo insieme?",
         origin: "sent",
-        hour: "12:19"
+        hour: "12:19",
+        dropdown: '',
       },
       {
         message: "Sì, a che ora?",
         origin: "received",
-        hour: "14:04"
+        hour: "14:04",
+        dropdown: '',
       },
       {
         message: "Ti farò sapere!",
         origin: "sent",
-        hour: "18:10"
+        hour: "18:10",
+        dropdown: '',
       }
   ]
   },
@@ -163,17 +185,20 @@ var app = new Vue({
       {
         message: "E' da un po' che non ci vediamo...",
         origin: "sent",
-        hour: "12:19"
+        hour: "12:19",
+        dropdown: '',
       },
       {
         message: "Troppi impegni, purtroppo.",
         origin: "received",
-        hour: "14:04"
+        hour: "14:04",
+        dropdown: '',
       },
       {
         message: "Vero, sto lavorando sempre.",
         origin: "sent",
-        hour: "18:10"
+        hour: "18:10",
+        dropdown: '',
       }
     ]
   },
@@ -197,7 +222,8 @@ var app = new Vue({
            {
              message: this.inputMessage,
              origin: "sent",
-             hour: this.currentHour()
+             hour: this.currentHour(),
+             dropdown: false,
            }
          );
 
@@ -215,7 +241,8 @@ var app = new Vue({
          {
          message: randomanswers[random],
          origin: 'received',
-         hour: this.currentHour()
+         hour: this.currentHour(),
+         dropdown: false,
        }), 1500);
 
        let random = Math.floor(Math.random() * randomanswers.length);
@@ -262,13 +289,17 @@ var app = new Vue({
 
      },
     // MESSAGE DROP-DOWN MENU
-    dropDown: function(index) {
+    dropDown: function(index, messages) {
 
-      if (this.dropMenu == false) {
-        this.dropMenu = true;
-      } else {
-        this.dropMenu = false;
-      }
+     let message = this.contactsList[this.indexChat].allMessages[index];
+
+     if (message.dropdown == false) {
+      message.dropdown = true;
+    } else
+      message.dropdown = false;
+
+     // console.log(menu);
+     // console.log(this.contactsList[this.indexChat].allMessages[index]);
 
     },
   },

@@ -17,16 +17,6 @@ a:visited {
   color: #447587;
 }
 
-/* FILTER CONTACTS */
-
-.hidden {
-  visibility: hidden;
-}
-
-.show {
-  visibility: visible;
-}
-
 /* BACKGROUND */
 
 .header-bg {
@@ -60,7 +50,6 @@ a:visited {
   flex-direction: column;
   height: calc(100vh - 80px);
   background-color: white;
-
 }
 
 /* side header */
@@ -362,7 +351,6 @@ a:visited {
 
 .drop-downopen {
   display: inline-block;
-
 }
 
 /* chat footer */
@@ -396,10 +384,10 @@ a:visited {
 
 /* MEDIA QUERIES */
 
-/* // Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap */
+/* // Extra small devices (portrait phones, less than 576px) */
 
 @media all and (max-width: 576px) {
+
   .app-container {
     height: 100vh;
   }
@@ -420,10 +408,11 @@ a:visited {
     width: 450px;
   }
 
-
 }
 
-// Small devices (landscape phones, 576px and up) */
+/* // Small devices (landscape phones, 576px and up) */
+????????????????
+
 @media all and (min-width: 576px) {
 
   .app-container {
@@ -454,6 +443,7 @@ a:visited {
 }
 
 /* // Medium devices (tablets, 768px and up) */
+
 @media all and (max-width: 768px) {
 
 
