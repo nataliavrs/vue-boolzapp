@@ -98,8 +98,9 @@
             </div>
 
             <div class="contact-hour">
-              <span v-if="contact.allMessages.length > 0">{{currentDay()}}
-                    {{contact.allMessages[contact.allMessages.length - 1].hour}}
+              <span v-if="contact.allMessages.length > 1">
+                {{currentDay()}}
+                {{contact.allMessages[contact.allMessages.length - 1].hour}}
               </span>
             </div>
 
@@ -130,10 +131,11 @@
 
             <span>{{contact.name}}</span>
             <span >
-              Ultimo accesso oggi
+              Ultimo accesso: {{currentDay()}}
             </span>
-            <span v-if="contact.allMessages.length > 0">{{currentDay()}} alle
-                  {{contact.allMessages[contact.allMessages.length - 1].hour}}
+            <span v-if="contact.allMessages.length >= 1">
+              alle
+              {{contact.allMessages[contact.allMessages.length - 1].hour}}
             </span>
 
           </div>

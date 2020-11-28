@@ -91,6 +91,12 @@ var app = new Vue({
         origin: "received",
         hour: "18:10",
         dropdown: '',
+      },
+      {
+        message: "There are many things about me that you should know",
+        origin: "sent",
+        hour: "18:10",
+        dropdown: '',
       }
   ]
   },
@@ -235,7 +241,7 @@ var app = new Vue({
      },
     // AUTOMATIC ANSWER
     automaticAnswer: function (){
-      
+
        setTimeout(() =>
        this.contactsList[this.indexChat].allMessages.push (
          {
