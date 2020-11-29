@@ -3,14 +3,9 @@ var app = new Vue({
   data: {
     userName: "Natália Veras",
     indexChat: 0,
-
     inputMessage: "",
-
     searchInput: "",
     indexMessage: 0,
-
-    todayDate: new Date (),
-    nowHour: new Date (),
 
     contactsList: [
     {
@@ -105,7 +100,13 @@ var app = new Vue({
     contactPicture: 'img/avatar_3.jpg',
     status: true,
     allMessages: [
-      {},
+      {
+        message: "Ehi, Natália",
+        origin: "received",
+        hour: "05:56",
+        dropdown: '',
+      },
+
     ]
     },
     {
@@ -211,7 +212,7 @@ var app = new Vue({
     ]
   },
   methods: {
-    // SHOW CLICKED CHAT
+    // SHOW OPENED CHAT
     openChat: function(index) {
 
        this.indexChat = index;
@@ -277,25 +278,28 @@ var app = new Vue({
     // CURRENT HOUR
     currentHour: function() {
 
-       let seconds = this.nowHour.getSeconds();
-       if (seconds < 10) {
-         seconds = "0" + seconds;
-       }
-       let hour = this.nowHour.getHours()
-       let minute = this.nowHour.getMinutes()
-       if (minute < 10) {
-         minute = "0" + minute;
-       }
+      let nowHour = new Date ();
 
-       return `${hour}:${minute}:${seconds}`
+      let seconds = nowHour.getSeconds();
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      let hour = nowHour.getHours()
+      let minute = nowHour.getMinutes()
+      if (minute < 10) {
+        minute = "0" + minute;
+      }
 
+      return `${hour}:${minute}:${seconds}`
      },
     // CURRENT DAY
     currentDay: function() {
 
-       let day = this.todayDate.getDate();
-       let month = this.todayDate.getMonth() + 1
-       let year = this.todayDate.getFullYear()
+      let todayDate = new Date ();
+
+       let day = todayDate.getDate();
+       let month = todayDate.getMonth() + 1
+       let year = todayDate.getFullYear()
 
        return `${day}/${month}/${year}`
 
@@ -311,9 +315,7 @@ var app = new Vue({
       message.dropdown = false;
     }
 
-
-      console.log(this.contactsList[this.indexChat].allMessages[index]);
-
+    console.log(this.contactsList[this.indexChat].allMessages[index]);
 
     },
     // DELETE MESSAGE
