@@ -66,6 +66,7 @@
   margin-left: 10px;
   color: #B1B1B1;
   font-size: 1.2em;
+  cursor: pointer;
 }
 
 /* NOTIFICATIONS BLOCK */
@@ -149,6 +150,7 @@
 .single-chat {
   height: 70px;
   display: flex;
+  padding-top: 4px;
 }
 
 .single-chat:hover, .opened {
@@ -336,6 +338,7 @@
 .chat-footer i {
   color: #6C7678;
   font-size: 1.4em;
+  cursor: pointer;
 }
 
 /* MEDIA QUERIES */
@@ -367,8 +370,7 @@
 
 }
 
-????????????????
-/* Small devices (landscape phones, 576px and up) */
+./* Small devices (landscape phones, 576px and up) */
 @media all and (min-width: 576px) {
 
   .side-header {

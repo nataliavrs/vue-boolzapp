@@ -216,14 +216,13 @@ var app = new Vue({
     openChat: function(index) {
 
        this.indexChat = index;
+       this.scrollDown()
 
      },
     // SEND MESSAGE
     sendMessage: function() {
 
-       if (this.inputMessage == "") {
-
-       }  else {
+       if (this.inputMessage !== "") {
 
          this.contactsList[this.indexChat].allMessages.push(
            {
@@ -236,14 +235,20 @@ var app = new Vue({
 
          this.inputMessage = "";
          this.sentAudio();
-         this.scroll();
+         this.scrollDown();
          this.automaticAnswer();
 
-
        }
+
      },
     // AUTOMATIC ANSWER
     automaticAnswer: function (){
+
+      const randomanswers = ['Bah secondo me dovremmo tutti andare su una montagna e non tornare più',
+      '*nubi sticker*', 'Ma che dici', 'Che slurpina', 'Ma queste cose... nel 2020!', 'Beh, che dire',
+      'Un bel lorem ipsum ci stava però', 'Vita nubi anche oggi', 'I <3 cuccioline'];
+
+      let random = Math.floor(Math.random() * randomanswers.length);
 
        setTimeout(() =>
        this.contactsList[this.indexChat].allMessages.push (
@@ -256,14 +261,8 @@ var app = new Vue({
       )
       , 1500);
 
-
-     setTimeout( () => this.receivedAudio(), 1500 );
-
-     this.scroll();
-
-     const randomanswers = ['Bah secondo me dovremmo tutti andare su una montagna e non tornare più', '*nubi sticker*', 'Ma che dici', 'Che slurpina', 'Ma queste cose... nel 2020!', 'Beh, che dire', 'Un bel lorem ipsum ci stava però', 'Vita nubi anche oggi', 'I <3 cuccioline'];
-
-     let random = Math.floor(Math.random() * randomanswers.length);
+     setTimeout( () => this.receivedAudio() , 1500 );
+     setTimeout( () => this.scrollDown(), 1500 );
 
      },
     // FILTER
@@ -345,25 +344,15 @@ var app = new Vue({
       audio.play();
     },
     // SCROLL TO LAST MESSAGE
-    scroll: function () {
+    scrollDown: function () {
 
       setTimeout(()=>{
-
         var container = document.querySelector(".chat-body");
         var scrollHeight = container.scrollHeight;
         container.scrollTop = scrollHeight;
-
       },5);
-    },
 
+    },
   },
-  // // SCROLL TO LAST MESSAGE
-  // updated: function () {
-  //   // qualsiasi elemento che cambio nel DOM parte la funzione
-  //   var container = document.querySelector(".chat-body");
-  //   var scrollHeight = container.scrollHeight;
-  //   container.scrollTop = scrollHeight;
-  //
-  // },
 
 })
